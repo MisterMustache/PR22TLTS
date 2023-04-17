@@ -1,0 +1,75 @@
+CHARSET="ANSI";
+AXIS-VERSION="2010";
+CODEPAGE="windows-1250";
+LANGUAGE="sl";
+LANGUAGES="sl","en";
+CREATION-DATE="20041028 08:12";
+DECIMALS=3;
+SHOWDECIMALS=3;
+MATRIX="H029S";
+COPYRIGHT=YES;
+SUBJECT-CODE="H029";
+SUBJECT-AREA="ENERGETIKA";
+DESCRIPTION="Proizvodnja elektriène energije po vrstah elektrarn (GWh), Slovenija, letno";
+TITLE="Proizvodnja elektriène energije (GWh) po PROIZVODNJA / VRSTA ELEKTRARNE in LETO";
+CONTENTS="Proizvodnja elektriène energije (GWh)";
+STUB="PROIZVODNJA / VRSTA ELEKTRARNE";
+HEADING="LETO";
+VALUES("PROIZVODNJA / VRSTA ELEKTRARNE")="Proizvodnja na generatorju - skupaj","Proizvodnja na generatorju - hidroelektrarne","Proizvodnja na generatorju - hidroelektrarne - od tega s preèrpavanjem","Proizvodnja na generatorju - termoelektrarne","Proizvodnja na generatorju - jedrska elektrarna",
+"Proizvodnja na generatorju - sonène elektrarne","Proizvodnja na generatorju - vetrne elektrarne","Proizvodnja na pragu - skupaj","Proizvodnja na pragu - hidroelektrarne","Proizvodnja na pragu - hidroelektrarne - od tega s preèrpavanjem",
+"Proizvodnja na pragu - termoelektrarne","Proizvodnja na pragu - jedrska elektrarna","Proizvodnja na pragu - sonène elektrarne","Proizvodnja na pragu - vetrne elektrarne";
+VALUES("LETO")="1996","2004","2005","2006","2007","2008","2009","2010","2011","2012","2013","2014","2015","2016","2017","2018","2019","2020","2021";
+TIMEVAL("LETO")=TLIST(A1),"2003","2004","2005","2006","2007","2008","2009","2010","2011","2012","2013","2014","2015","2016","2017","2018","2019","2020","2021";
+CODES("PROIZVODNJA / VRSTA ELEKTRARNE")="10000","10100","10101","10200","10300","10400","10600","20000","20100","20101","20200","20300","20400","20600";
+CODES("LETO")="1996","2004","2005","2006","2007","2008","2009","2010","2011","2012","2013","2014","2015","2016","2017","2018","2019","2020","2021";
+LAST-UPDATED="20221006 10:30";
+UNITS="GWh";
+CONTACT="Statistièni urad RS, T: (01) 241 64 04, E: gp.surs@gov.si";
+DATABASE="SI-STAT";
+SOURCE="Statistièni urad Republike Slovenije";
+NOTE="Povezane vsebine: #- <A class=seznam HREF=http://www.stat.si/StatWeb/Common/PrikaziDokument.ashx?IdDatoteke=8167 target=_blank>Metodološka pojasnila</A>";
+VALUENOTEX("PROIZVODNJA / VRSTA ELEKTRARNE","Proizvodnja na generatorju - hidroelektrarne")="Upoštevana je tudi ocena proizvodnje malih zasebnih hidroelektrarn na podlagi nakupa distribucije.#";
+VALUENOTEX("PROIZVODNJA / VRSTA ELEKTRARNE","Proizvodnja na pragu - hidroelektrarne")="Upoštevana je tudi ocena proizvodnje malih zasebnih hidroelektrarn na podlagi nakupa distribucije.#";
+DATASYMBOL1="N";
+DATASYMBOL2="-";
+DATASYMBOL4="z";
+NEXT-UPDATE="20230515 10:30";
+SUBJECT-AREA[en]="ENERGY";
+DESCRIPTION[en]="Production of electricity by type of power plant (GWh), Slovenia, annually";
+TITLE[en]="Production of electricity (GWh) by PRODUCTION / TYPE OF POWER PLANT and YEAR";
+CONTENTS[en]="Production of electricity (GWh)";
+STUB[en]="PRODUCTION / TYPE OF POWER PLANT";
+HEADING[en]="YEAR";
+VALUES[en]("PRODUCTION / TYPE OF POWER PLANT")="Gross production - total","Gross production - Hydro power plants","Gross production - Hydro - of which from pumped storage","Gross production - Thermal power plants","Gross production - Nuclear power plant","Gross production - Solar power plants",
+"Gross production - Wind power plants","Net production - total","Net production - Hydro power plants","Net production - Hydro - of which from pumped storage","Net production - Thermal power plants","Net production - Nuclear power plant",
+"Net production - Solar power plants","Net production - Wind power plants";
+VALUES[en]("YEAR")="1996","2004","2005","2006","2007","2008","2009","2010","2011","2012","2013","2014","2015","2016","2017","2018","2019","2020","2021 (provisional data)";
+TIMEVAL[en]("YEAR")=TLIST(A1),"2003","2004","2005","2006","2007","2008","2009","2010","2011","2012","2013","2014","2015","2016","2017","2018","2019","2020","2021";
+CODES[en]("PRODUCTION / TYPE OF POWER PLANT")="10000","10100","10101","10200","10300","10400","10600","20000","20100","20101","20200","20300","20400","20600";
+LAST-UPDATED[en]="20221006 10:30";
+UNITS[en]="GWh";
+CONTACT[en]="Statistical Office of the Republic of Slovenia, T: +386 1 241 64 04, E: gp.surs@gov.si";
+DATABASE[en]="SI-STAT";
+SOURCE[en]="Statistical Office of the Republic of Slovenia";
+NOTE[en]="Linked content:# - <A class=seznam HREF= http://www.stat.si/StatWeb/Common/PrikaziDokument.ashx?IdDatoteke=8345 target=_blank>Methodological explanations</A>";
+VALUENOTEX[en]("PRODUCTION / TYPE OF POWER PLANT","Gross production - Hydro power plants")="Estimation of production of small privat hydro power plants is included in view of distribution's purchase.#";
+VALUENOTEX[en]("PRODUCTION / TYPE OF POWER PLANT","Net production - Hydro power plants")="Estimation of production of small privat hydro power plants is included in view of distribution's purchase.#";
+DATASYMBOL1[en]="N";
+DATASYMBOL2[en]="-";
+DATASYMBOL4[en]="z";
+DATA=
+12737.000 15272.000 15117.000 15115.000 15043.000 16398.000 16403.000 16440.000 16059.000 15736.000 16103.000 17437.000 15100.000 16500.000 16326.225 16326.935 16099.564 17190.698 15876.922 
+3668.000 4095.000 3461.000 3591.000 3266.000 4018.000 4715.000 4703.000 3706.000 4087.000 4923.000 6366.000 4091.000 4782.000 4140.920 4892.993 4682.538 5224.743 4997.067 
+".." ".." ".." ".." ".." ".." ".." 185.000 144.000 188.000 294.000 274.000 283.000 279.000 272.575 188.673 203.143 290.683 284.556 
+4507.000 5718.000 5772.000 5975.000 6082.000 6107.000 5945.000 6067.000 6073.000 5958.000 5661.000 4440.000 5081.000 5730.000 5610.450 5396.521 5286.580 5238.742 4715.198 
+4562.000 5459.000 5884.000 5548.000 5695.000 6273.000 5739.000 5657.000 6215.000 5528.000 5300.000 6370.000 5648.000 5715.000 6285.272 5776.439 5821.257 6352.766 5705.951 
+".." 0.000 0.000 0.000 0.000 1.000 4.000 13.000 66.000 162.000 215.000 257.000 274.000 267.000 283.867 254.961 303.039 368.196 453.113 
+".." ".." ".." ".." ".." ".." 0.000 0.000 0.000 1.000 4.000 4.000 6.000 6.000 5.716 6.021 6.150 6.251 5.593 
+11972.000 14308.000 14149.000 14117.000 14044.000 15357.000 15375.000 15410.000 15001.000 14705.000 15117.000 16486.000 14187.000 15546.000 15396.876 15441.970 15224.354 16289.674 15048.057 
+3616.000 4034.000 3407.000 3536.000 3215.000 3959.000 4643.000 4636.000 3649.000 4028.000 4855.000 6284.000 4032.000 4721.000 4085.016 4830.775 4622.091 5159.168 4932.026 
+".." ".." ".." ".." ".." ".." ".." 184.000 143.000 187.000 293.000 273.000 282.000 278.000 271.498 187.919 202.329 289.521 283.442 
+3997.000 5062.000 5129.000 5291.000 5400.000 5425.000 5268.000 5380.000 5384.000 5271.000 5007.000 3880.000 4503.000 5121.000 5054.639 4860.864 4760.662 4715.292 4238.768 
+4359.000 5212.000 5614.000 5290.000 5428.000 5972.000 5460.000 5381.000 5902.000 5244.000 5036.000 6061.000 5372.000 5431.000 5967.827 5489.908 5532.981 6040.846 5418.643 
+".." 0.000 0.000 0.000 0.000 1.000 4.000 13.000 66.000 162.000 215.000 257.000 274.000 267.000 283.678 254.402 302.470 368.117 453.027 
+".." ".." ".." ".." ".." ".." 0.000 0.000 0.000 1.000 4.000 4.000 6.000 6.000 5.716 6.021 6.150 6.251 5.593 
+;
