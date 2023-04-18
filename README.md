@@ -47,7 +47,19 @@ Ker pa to ne pove ravno veliko je možno to malce razdeliti na več kategorij:
 
 Vidi se, da **veliko** večino porabe povzročajo predelovalne dejavnosti.
 
-2. Sledi cena električne energije skozi čas:
+---
+
+2. Proizvodnja električne energije
+
+![proizvodnja_elektricne_energije_po_tipu_elektrarne.png](porocilo_slike%2Fproizvodnja_elektricne_energije_po_tipu_elektrarne.png)
+
+Iz grafa se vidi, da sta bila v zgodnjih 2000ih glavna proizvajalca NEK in termo elektrarne, medtem ko so blizu sledile hidroelektrarne, ki so se uspešno približale termoelektrarnam in jih navsezadnje le prehitele medtem, ko so le te začele zgubljati delež.
+
+NEK ima zelo konstanten in redko deviiran ritem.
+
+---
+
+3. Cena električne energije skozi čas:
 
 ![cena_elektrike_ne-gospodinjske_skupaj.png](porocilo_slike%2Fcena_elektrike_ne-gospodinjske_skupaj.png)
 
@@ -56,10 +68,6 @@ Opazimo lahko, da je bila cena električne energije za gospodinjske odjemalce v 
 Nato sledijo zanimive opazke:
 - ob začetku razglasitve koronavirusa se je cena za gospodinjske uporabnike znižala vendar se je kmalu v okolici šestih mesecev ponovno zvišala nazaj na skoraj prejšnjo (a malce višjo). 
 - Ob eskalaciji konflikta med Rusijo in Ukrajino se je cena začela rahlo višati in ob samem začetku konflikta strmo izbruhnila. Za negospodinjske uporabnike je ta vzpon pomenil tudi do 300% zvišanje cene, ki je povzročilo, energetsko krizo ne samo v Sloveniji temveč celotni Evropski uniji.
-
-
-
-
 
 
 
