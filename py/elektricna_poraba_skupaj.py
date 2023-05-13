@@ -14,9 +14,9 @@ data = data[1:]
 values = []
 names = []
 for row in data:
-    print(row)
     names.append(row[0])
-    value = [int(n) if n.isdigit() else 0 for n in row[1:]]
+    # deli se z 3.6, ker je to faktor pretvorbe iz TJ v GWh
+    value = [int(n) / 3.6 if n.isdigit() else 0 for n in row[1:]]
     values.append(value)
 
 # od 2008 do 2021
@@ -25,10 +25,9 @@ colors = ['blue']
 
 fig, ax = plt.subplots(figsize=(8, 5))
 for i, value in enumerate(values):
-    ax.plot(years, value, color=colors[i], label='Skupaj')
+    ax.plot(years, value, color=colors[i])
 plt.xlabel('Leto')
-plt.ylabel('Poraba v TJ')
-plt.title('Poraba')
-ax.legend(loc='best')
+plt.ylabel('Poraba [GWh]')
+plt.title('Skupna poraba elektrike v Sloveniji')
 plt.subplots_adjust(bottom=0.25)
 plt.show()
