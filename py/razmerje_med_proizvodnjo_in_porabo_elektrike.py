@@ -12,7 +12,8 @@ with open('../podatki/csv/proizvodnja_elektrike_po_tipu_elektrarne.csv', encodin
     podatkiProizvodov = [row for row in reader]
 
 
-# ---------- PORABA ----------
+# ---------- PREDPROCESIRANJE PODATKOV ----------
+# PORABA
 data = podatkiPorabe[1:]
 
 porabe_skupaj = []
@@ -25,7 +26,7 @@ for row in data:
 porabe_skupaj = porabe_skupaj[0]
 
 
-# ---------- PROIZVODNJA ----------
+# PROIZVODNJA
 # izberi taprave aktualne vrstice
 data = np.array(podatkiProizvodov[2:8])
 data = np.delete(data, 1, axis=0)
@@ -41,7 +42,7 @@ for row in data:
 proizvodi_skupaj = np.sum(proizvodi_po_tipu_elektrarn, axis=0)
 
 
-# ---------- RAZMERJA ----------
+# RAZMERJA
 # če je razmerje večje od 1, potem je viška elektrike, sicer jo je bilo potrebno uvažati
 razmerja_skupno = np.divide(proizvodi_skupaj, porabe_skupaj)
 
@@ -51,24 +52,25 @@ for proizvodi_tipa_elektrarne in proizvodi_po_tipu_elektrarn:
 
 
 # ---------- IZPIS PODATKOV ----------
-
 names = ['Hidroelektrarne', 'Termoelektrarne', 'Jedrska elektrarna', 'Sončne elektrarne', 'Vetrne elektrarne']
-colors = ['red', 'green', 'blue', 'yellow', 'cyan', 'magenta']
+colors = ['red', 'green', 'blue', 'purple', 'orange']
 leta = [leto for leto in range(2008, 2022, 1)]
 
 # prikaz razmerja skupne proizvodnje in skupne porabe
-plt.plot(leta, razmerja_skupno, color=colors[0])
+_, ax = plt.subplots(figsize=(8, 5))
+ax.plot(leta, razmerja_skupno, color=colors[0])
 plt.xlabel('Čas [leta]')
 plt.ylabel('Razmerje [proizvod/poraba]')
-plt.title('Razmerje med skupno proizvodnjo in porabo elektrike v Sloveniji')
+plt.title('Razmerje med skupno proizvodnjo in skupno porabo elektrike v Sloveniji')
 plt.show()
 
 # prikaz razmerja proizvodnje po tipu elektrarne in skupne porabe
-plt.axhline(y=1, color='black', linestyle='--')
+_, ax = plt.subplots(figsize=(8, 5))
+ax.axhline(y=1, color='gray', linestyle='--')
 for i, value in enumerate(razmerja_po_tipu_elektrarn):
-    plt.plot(leta, value, color=colors[i], label='{}'.format(names[i]))
+    ax.plot(leta, value, color=colors[i], label='{}'.format(names[i]))
 plt.xlabel('Čas [leta]')
 plt.ylabel('Razmerje [proizvod/poraba]')
-plt.title('Razmerje med proizvodnjo po tipu elektrarne in porabo elektrike v Sloveniji')
+plt.title('Razmerje med proizvodnjo po tipu elektrarne in skupno porabo elektrike v Sloveniji')
 plt.legend(loc='lower left', bbox_to_anchor=(0, 0.1, 1, 0.1))
 plt.show()

@@ -1,15 +1,20 @@
 import matplotlib.pyplot as plt
 import csv
 
+
+# ---------- UVOZ PODATKOV ----------
 with open('../podatki/csv/cena_elektrike.csv', encoding="cp1252") as f:
     reader = csv.reader(f)
     data = [row for row in reader]
 
+
+# ---------- PREDPROCESIRANJE PODATKOV ----------
 household = data[1]
 non_household = data[7]
 
+
+# ---------- IZPIS PODATKOV ----------
 quarters = [x for x in data[0]][1:]
-colors = ['red', 'green', 'blue', 'yellow', 'cyan', 'magenta']
 
 for i, quarter in enumerate(quarters):
     if i % 4 != 0:

@@ -16,21 +16,20 @@ for i, quarter in enumerate(quarters):
     else:
         quarters[i] = quarter[:-2]
 
-colors = ['red', 'green', 'blue', 'yellow', 'cyan', 'magenta']
-names = []
+colors = ['red', 'green', 'blue', 'orange', 'magenta']
+names = ['do 1000 KWh', '1000 - 2500 KWh', '2500 - 5000 KWh', '5000 - 15000 KWh', 'nad 15000 KWh']
 values = []
 
 # izberi vrednosti z vsemi davki
 for i, row in enumerate(data):
     if i % 6 == 5:
-        names.append(row[0][4:-1])
         values.append([float(n) if n != '-' else 0 for n in row[2:]])
 
 for i, value in enumerate(values):
     plt.plot(quarters, value, color=colors[i], label='{}'.format(names[i]))
 plt.xlabel('Čas [četrtletje]')
 plt.ylabel('Cena [EUR/kWh]')
-plt.title('Cena električne energije gospodinjskih odjemalcev po določeni porabi')
+plt.title('Cena elektrike gospodinjskih odjemalcev po določeni porabi')
 plt.legend(loc='upper left')
 plt.xticks(rotation=-60)
 plt.show()

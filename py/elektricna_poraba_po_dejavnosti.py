@@ -54,7 +54,7 @@ colors = ['blue', 'red', 'green']
 plt.axhline(y=1, color='grey', linestyle='--')
 for i, value in enumerate(relativne_porabe_po_dejavnosti):
     plt.plot(years, value, color=colors[i], label='{}'.format(names[i]))
-plt.xlabel('Leto')
+plt.xlabel('Čas [leto]')
 plt.ylabel('Relativna sprememba od povprečne porabe')
 plt.title('Električna poraba po dejavnosti v Sloveniji')
 plt.legend(loc='upper left')
