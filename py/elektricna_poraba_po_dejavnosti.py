@@ -1,39 +1,61 @@
-import Orange
-import matplotlib
 import matplotlib.pyplot as plt
-import matplotlib.image as img
 import numpy as np
 import csv
 
+
+def getdigit(n):
+    if n.isdigit():
+        return n
+    # nekateri vnosi imajo na koncu to črko, ostali pa ne
+    elif n[-1] == 'M':
+        return int(n[:-1])
+    return 0
+
+
+# ---------- UVOZ PODATKOV ----------
 with open('../podatki/csv/poraba_podejavnosti_breztransformacij.csv', encoding="cp1252") as f:
     reader = csv.reader(f)
-    data = [row for row in reader]
+    podatki = [row for row in reader]
 
-new_data = []
-for row in data:
+novi_podatki = []
+for row in podatki:
     if str(row[0])[1] == " ":
-        new_data.append(row)
+        novi_podatki.append(row)
 
-data = new_data
-values = []
+
+# ---------- PREDPROCESIRANJE PODATKOV ----------
+# tukaj se zgodi pretvorba različnih enot v eno samo [GWh], ki je skladna drugje
+# nekatere vrednost imajo na koncu črko 'M', kar onemogoči direktno pretvorbo v število
+# nekatere celotne dejavnosti pa vsebujejo preveč manjkajočih vrednosti, da bi bile uporabne
+podatki = novi_podatki
+porabe_po_dejavnosti = []
 names = []
-for row in data:
-    print(row)
+for row in podatki:
+    if row[0][0] in ['A', 'D', 'E']:
+        continue
     names.append(row[0])
     # deli se z 3.6, ker je to faktor pretvorbe iz TJ v GWh
-    value = [int(n) / 3.6 if n.isdigit() else 0 for n in row[1:]]
-    values.append(value)
+    value = [int(getdigit(n)) / 3.6 for n in row[1:]]
+    porabe_po_dejavnosti.append(value)
 
+
+# ---------- TRANSFORMACIJA PODATKOV ----------
+relativne_porabe_po_dejavnosti = []
+for tabela_porab in porabe_po_dejavnosti:
+    povp_poraba = np.mean(tabela_porab)
+    relativne_porabe_po_dejavnosti.append([poraba / povp_poraba for poraba in tabela_porab])
+
+
+# ---------- IZPIS PODATKOV ----------
 # od 2008 do 2021
 years = [year for year in range(2008, 2022, 1)]
-colors = ['red', 'green', 'blue', 'yellow', 'cyan', 'magenta']
+colors = ['blue', 'red', 'green']
 
-fig, ax = plt.subplots(figsize=(8, 8))
-for i, value in enumerate(values):
-    ax.plot(years, value, color=colors[i], label='{}'.format(names[i]))
+plt.axhline(y=1, color='grey', linestyle='--')
+for i, value in enumerate(relativne_porabe_po_dejavnosti):
+    plt.plot(years, value, color=colors[i], label='{}'.format(names[i]))
 plt.xlabel('Leto')
-plt.ylabel('Poraba [GWh]')
+plt.ylabel('Relativna sprememba od povprečne porabe')
 plt.title('Električna poraba po dejavnosti v Sloveniji')
-ax.legend(loc='lower center', bbox_to_anchor=(0, -0.4, 1, 0.1))
-plt.subplots_adjust(bottom=0.25)
+plt.legend(loc='upper left')
 plt.show()
