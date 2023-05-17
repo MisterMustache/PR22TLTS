@@ -39,7 +39,7 @@ for leto in cetrtletja_po_letih.keys():
     cene_df[leto] = cene_df[cetrtletja_po_letih[leto]].mean(axis=1)
     cene_df = cene_df.drop(cetrtletja_po_letih[leto], axis=1)
 
-# povpreči para enakih let in počisti imena stolpcev, da bodo samo leta, brez dodatnega besedila
+# seštej vrednosti para enakih let in počisti imena stolpcev, da bodo samo leta, brez dodatnega besedila
 pari_stolpcev = [(f'{leto}_1', f'{leto}_2') for leto in range(1996, 2022)]
 for col1, col2 in pari_stolpcev:
     proizvodi_df[col1[:4]] = proizvodi_df[[col1, col2]].sum(axis=1)
