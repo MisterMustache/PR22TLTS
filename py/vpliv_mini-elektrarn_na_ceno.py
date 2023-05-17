@@ -111,8 +111,8 @@ def analyze(df, odjemalci):
 
 
 # odstranitev osamelcev
-# gosp_cene_df.drop([8], inplace=True)
-# negosp_cene_df.drop([], inplace=True)
+gosp_cene_df.drop([8], inplace=True)
+negosp_cene_df.drop([0, 1], inplace=True)
 
 print(gosp_cene_df)
 print(negosp_cene_df)
