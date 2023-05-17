@@ -12,7 +12,7 @@ porabe_df = pd.read_csv('../podatki/csv/poraba_skupaj_brez-transformacij.csv', e
 
 
 # ---------- PREDPROCESIRANJE ----------
-# odstrani povprečne cene (na voljo je več kategoriziranih cen po določeni porabi)
+# odstrani kategorizirane cene
 cene_df = cene_df.loc[[0, 6]]
 
 # odstrani stolpca, ki vsebujeta ime skupin/dejavnosti
